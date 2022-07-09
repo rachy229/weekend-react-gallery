@@ -1,10 +1,17 @@
-function GalleryList() {
+import GalleryItem from "../GalleryItem/GalleryItem";
 
-    return(
-        <>
-        </>
-    );
+function GalleryList({galleryList}) {
+console.log(galleryList);
+    return (
+        <p>{galleryList.map(item => 
+                (<GalleryItem
+                    key={item.id}
+                    item={item}
+                />)
+            )}
+        </p>
+    )
 
-}
+            }
 
 export default GalleryList;
