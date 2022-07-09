@@ -1,4 +1,6 @@
 import { useState } from "react";
+import axios from 'axios';
+
 
 function GalleryItem({item}) {
 
@@ -9,6 +11,10 @@ const toggleImage = () => {
         setSwap(!swap);
         // console.log(swap);
 }
+
+// const handleLike = () => {
+//     console.log('click!');
+// }
 
 const showDescription = () => {
         if(swap === true) {
@@ -24,11 +30,6 @@ const showDescription = () => {
     return(
 
         <>
-        {/* { this.showDescription() } */}
-            {/* <div key={item.id}>
-                {item.description}
-            </div> */}
-            {/* <img onClick={toggleImage} src={item.path}></img> */}
             <div>{showDescription()}</div>
         </>
     );

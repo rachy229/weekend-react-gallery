@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import GalleryItem from '../GalleryItem/GalleryItem';
 import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
@@ -20,6 +19,18 @@ function App() {
     })
   }
 
+  const handleLike = () => {
+    axios.put(`/gallery/like/:id`)
+    .then(response => fetchGallery())
+  .catch(error => console.log('error in handleLike', error))
+  }
+
+
+// const handleLike = (id) => {
+
+// }
+
+
   useEffect(() => {
     fetchGallery();
   }, [])
@@ -29,7 +40,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList galleryList={galleryList}></GalleryList>
+        <GalleryList handleLike={handleLike} galleryList={galleryList}></GalleryList>
       </div>
     );
 }
