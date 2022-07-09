@@ -12,9 +12,9 @@ const toggleImage = () => {
 
 const showDescription = () => {
         if(swap === true) {
-            return <p class="galleryBox" onClick={toggleImage}>{item.description}</p>
+            return <p className="galleryBox" onClick={toggleImage}>{item.description}</p>
         }else{
-            return <img class="galleryBox galleryDescription" onClick={toggleImage} src={item.path}></img>
+            return <img className="galleryBox galleryDescription" onClick={toggleImage} src={item.path}></img>
         }
     }
 
@@ -23,14 +23,14 @@ const showDescription = () => {
 
     return(
 
-        <div>
+        <>
         {/* { this.showDescription() } */}
             {/* <div key={item.id}>
                 {item.description}
             </div> */}
             {/* <img onClick={toggleImage} src={item.path}></img> */}
-            {showDescription()}
-        </div>
+            <div>{showDescription()}</div>
+        </>
     );
 }
 

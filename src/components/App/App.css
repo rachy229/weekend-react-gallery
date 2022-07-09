@@ -19,6 +19,6 @@ img{
 
 .galleryBox{
   height: 525px;
-
+  flex-wrap: inline;
 }
 
