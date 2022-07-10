@@ -28,9 +28,9 @@ const toggleImage = () => {
 
 const showDescription = () => {
         if(swap === true) {
-            return <p className="galleryBox" onClick={toggleImage}>{item.description}</p>
+            return <div className="galleryBox" onClick={toggleImage}> <p> {item.description}</p> </div>
         }else{
-            return <img className="galleryBox galleryDescription" onClick={toggleImage} src={item.path}></img>
+            return <div className="galleryBox" onClick={toggleImage}> <img  src={item.path}></img></div>
         }
     }
 
@@ -41,8 +41,8 @@ const showDescription = () => {
 
         <>
             <div>{showDescription()}</div>
-            <button onClick={() =>handleLike(item.id)} data-id={item.id}>❤️</button>
-            <p>Like Count: {item.likes}</p>
+            <button className="like-zone" onClick={() =>handleLike(item.id)} data-id={item.id}>❤️</button>
+            <p className="like-zone" >Like Count: {item.likes}</p>
         </>
     );
 }
