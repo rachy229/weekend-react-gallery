@@ -1,10 +1,11 @@
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 
-function GalleryItem({item}) {
+function GalleryItem({item, fetchGallery}) {
 
     const [swap, setSwap] = useState(false)
+
 
 const toggleImage = () => {
         // console.log('click')
@@ -12,9 +13,18 @@ const toggleImage = () => {
         // console.log(swap);
 }
 
-// const handleLike = () => {
-//     console.log('click!');
-// }
+
+    const handleLike = (id) => {
+        
+        axios.put(`/gallery/like/${id}`)
+        .then((response) => {
+            fetchGallery();
+            console.log('id selected', id)
+            })
+        .catch((error) => {
+            console.log('error in handleLike', error)
+            })
+        }
 
 const showDescription = () => {
         if(swap === true) {
@@ -31,6 +41,8 @@ const showDescription = () => {
 
         <>
             <div>{showDescription()}</div>
+            <button onClick={() =>handleLike(item.id)} data-id={item.id}>❤️</button>
+            <p>Like Count: {item.likes}</p>
         </>
     );
 }

@@ -19,16 +19,18 @@ function App() {
     })
   }
 
-  const handleLike = () => {
-    axios.put(`/gallery/like/:id`)
-    .then(response => fetchGallery())
-  .catch(error => console.log('error in handleLike', error))
-  }
 
-
-// const handleLike = (id) => {
-
-// }
+  // const handleLike = (id) => {
+    
+  //   axios.put(`/gallery/like/${id}`)
+  //   .then((response) => {
+  //     fetchGallery();
+  //     console.log('id selected', id)
+  //   })
+  //   .catch((error) => {
+  //     console.log('error in handleLike', error)
+  //   })
+  // }
 
 
   useEffect(() => {
@@ -40,7 +42,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList handleLike={handleLike} galleryList={galleryList}></GalleryList>
+        <GalleryList fetchGallery={fetchGallery} galleryList={galleryList}></GalleryList>
       </div>
     );
 }

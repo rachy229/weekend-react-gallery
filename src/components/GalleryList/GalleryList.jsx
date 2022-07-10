@@ -1,22 +1,17 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
 
-function GalleryList({galleryList, handleLike}) {
+function GalleryList({galleryList, fetchGallery}) {
 
 
     
 console.log(galleryList);
     return (
         <>{galleryList.map(item => 
-            <div key={item.id}>
                 <GalleryItem
-                    item={item}
+                key={item.id}
+                fetchGallery={fetchGallery} item={item}
                 />
-                <>
-                <button onClick={handleLike}>HEART</button>
-                <p>{item.likes}</p>
-                </>
-            </div>
             )}
         </>
     )
