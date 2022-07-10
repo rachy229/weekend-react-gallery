@@ -41,8 +41,8 @@ const showDescription = () => {
 
         <>
             <div>{showDescription()}</div>
-            <button className="like-zone" onClick={() =>handleLike(item.id)} data-id={item.id}>❤️</button>
-            <p className="like-zone" >Like Count: {item.likes}</p>
+            <button className="like-zone" onClick={() =>handleLike(item.id)} data-id={item.id}>🤍</button>
+            <h3 className="like-zone" >Like Count: {item.likes}</h3>
         </>
     );
 }

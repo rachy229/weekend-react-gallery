@@ -1,5 +1,5 @@
 body{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
 }
 
 .App {
@@ -27,7 +27,11 @@ img{
 
 
 .like-zone{
-  background-color: rgb(253, 171, 199);
+  /* background-color: rgb(253, 171, 199); */
+  background-color: rgb(234, 43, 110);
+  color: white;
+
+
 }
 
 button{
