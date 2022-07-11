@@ -1,9 +1,13 @@
+body{
+  font-family: sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(234, 43, 110);
   padding: 1em;
   color: white;
   margin-bottom: 1em;
@@ -13,3 +17,26 @@
   font-size: 1.5em;
 }
 
+img{
+  width: 700px;
+}
+
+.galleryBox{
+  height: 525px;
+}
+
+
+.like-zone{
+  /* background-color: rgb(253, 171, 199); */
+  background-color: rgb(234, 43, 110);
+  color: white;
+
+
+}
+
+button{
+  height: 60px;
+  width: 60px;
+  border-radius: 25%;
+  font-size: x-large;
+}
